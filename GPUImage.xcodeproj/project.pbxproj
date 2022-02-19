@@ -7,12 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4285B5C127C08ED7000B4F4C /* ImageFramebuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4285B5BF27C08ED7000B4F4C /* ImageFramebuffer.cpp */; };
+		4285B5C227C08ED7000B4F4C /* ImageFramebuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4285B5C027C08ED7000B4F4C /* ImageFramebuffer.h */; };
+		4285B5C627C0908E000B4F4C /* Size.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4285B5C427C0908E000B4F4C /* Size.cpp */; };
+		4285B5C727C0908E000B4F4C /* Size.h in Headers */ = {isa = PBXBuildFile; fileRef = 4285B5C527C0908E000B4F4C /* Size.h */; };
+		4285B5CB27C094D3000B4F4C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4285B5C927C09494000B4F4C /* OpenGLES.framework */; platformFilter = ios; };
+		4285B5CE27C0A21A000B4F4C /* ImageFramebufferCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4285B5CC27C0A21A000B4F4C /* ImageFramebufferCache.cpp */; };
+		4285B5CF27C0A21A000B4F4C /* ImageFramebufferCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4285B5CD27C0A21A000B4F4C /* ImageFramebufferCache.h */; };
 		428FEED927B53C35006676E3 /* GPUImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 428FEED827B53C35006676E3 /* GPUImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		428FEEE227B53EA0006676E3 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 428FEEE027B53EA0006676E3 /* ShaderProgram.cpp */; };
+		428FEEE327B53EA0006676E3 /* ShaderProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = 428FEEE127B53EA0006676E3 /* ShaderProgram.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4285B5BF27C08ED7000B4F4C /* ImageFramebuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ImageFramebuffer.cpp; sourceTree = "<group>"; };
+		4285B5C027C08ED7000B4F4C /* ImageFramebuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageFramebuffer.h; sourceTree = "<group>"; };
+		4285B5C427C0908E000B4F4C /* Size.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Size.cpp; sourceTree = "<group>"; };
+		4285B5C527C0908E000B4F4C /* Size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Size.h; sourceTree = "<group>"; };
+		4285B5C927C09494000B4F4C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		4285B5CC27C0A21A000B4F4C /* ImageFramebufferCache.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ImageFramebufferCache.cpp; sourceTree = "<group>"; };
+		4285B5CD27C0A21A000B4F4C /* ImageFramebufferCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageFramebufferCache.h; sourceTree = "<group>"; };
 		428FEED527B53C35006676E3 /* GPUImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GPUImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		428FEED827B53C35006676E3 /* GPUImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImage.h; sourceTree = "<group>"; };
+		428FEEE027B53EA0006676E3 /* ShaderProgram.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
+		428FEEE127B53EA0006676E3 /* ShaderProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -20,17 +38,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4285B5CB27C094D3000B4F4C /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4285B5C327C0907D000B4F4C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4285B5C427C0908E000B4F4C /* Size.cpp */,
+				4285B5C527C0908E000B4F4C /* Size.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4285B5C827C09494000B4F4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4285B5C927C09494000B4F4C /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		428FEECB27B53C35006676E3 = {
 			isa = PBXGroup;
 			children = (
 				428FEED727B53C35006676E3 /* GPUImage */,
 				428FEED627B53C35006676E3 /* Products */,
+				4285B5C827C09494000B4F4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,7 +82,14 @@
 		428FEED727B53C35006676E3 /* GPUImage */ = {
 			isa = PBXGroup;
 			children = (
+				4285B5C327C0907D000B4F4C /* Utils */,
 				428FEED827B53C35006676E3 /* GPUImage.h */,
+				428FEEE027B53EA0006676E3 /* ShaderProgram.cpp */,
+				428FEEE127B53EA0006676E3 /* ShaderProgram.h */,
+				4285B5BF27C08ED7000B4F4C /* ImageFramebuffer.cpp */,
+				4285B5C027C08ED7000B4F4C /* ImageFramebuffer.h */,
+				4285B5CC27C0A21A000B4F4C /* ImageFramebufferCache.cpp */,
+				4285B5CD27C0A21A000B4F4C /* ImageFramebufferCache.h */,
 			);
 			path = GPUImage;
 			sourceTree = "<group>";
@@ -57,6 +101,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4285B5C227C08ED7000B4F4C /* ImageFramebuffer.h in Headers */,
+				4285B5C727C0908E000B4F4C /* Size.h in Headers */,
+				4285B5CF27C0A21A000B4F4C /* ImageFramebufferCache.h in Headers */,
+				428FEEE327B53EA0006676E3 /* ShaderProgram.h in Headers */,
 				428FEED927B53C35006676E3 /* GPUImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +141,7 @@
 				TargetAttributes = {
 					428FEED427B53C35006676E3 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -129,6 +178,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4285B5C627C0908E000B4F4C /* Size.cpp in Sources */,
+				428FEEE227B53EA0006676E3 /* ShaderProgram.cpp in Sources */,
+				4285B5CE27C0A21A000B4F4C /* ImageFramebufferCache.cpp in Sources */,
+				4285B5C127C08ED7000B4F4C /* ImageFramebuffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +309,8 @@
 		428FEEDD27B53C35006676E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -266,16 +321,20 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pocket.machenshuang.GPUImage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -283,6 +342,8 @@
 		428FEEDE27B53C35006676E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -293,16 +354,19 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pocket.machenshuang.GPUImage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

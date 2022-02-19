@@ -10,4 +10,17 @@
 
 #include <stdio.h>
 
+namespace gpu {
+class Size {
+public:
+    Size(float width, float height);
+    ~Size();
+    float width();
+    float height();
+private:
+    float mWidth;
+    float mHeight;
+};
+}
+
 #endif /* Size_h */
