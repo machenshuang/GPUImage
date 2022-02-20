@@ -33,8 +33,10 @@ public:
     void unlock();
     void clearAllLock();
     
-    Size size();
-    GLuint texture();
+    Size size() const;
+    GLuint texture() const;
+    TextureOptions options() const;
+    bool onlyTexture() const;
     
 private:
     Size mSize;

@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include "ImageFramebuffer.h"
 #include "Size.h"
+#include <string>
+#include <map>
 
 namespace gpu {
 
@@ -20,14 +22,17 @@ public:
     ImageFramebufferCache(const ImageFramebufferCache &)=delete;
     ImageFramebufferCache & operator = (const ImageFramebufferCache &)=delete;
     static ImageFramebufferCache & getInstance();
-    ImageFramebuffer* fetchFramebuffer(const Size &size, const TextureOptions &option);
+    
+    ImageFramebuffer* fetchFramebuffer(const Size &size, const TextureOptions &options, const bool &onlyTexture);
     void purgeAllUnassignedFramebuffer();
-    void returnFramebufferToCache(ImageFramebuffer *framebuffer);
-    void addFramebuffer(ImageFramebuffer *framebuffer);
-    void removeFramebuffer(ImageFramebuffer *framebuffer);
+    void returnFramebufferToCache(ImageFramebuffer * const framebuffer);
+    
 private:
     ImageFramebufferCache();
+    std::map<std::string, ImageFramebuffer *> mFramebufferCache;
+    std::map<std::string, int> mFramebufferTypeCounts;
     
+    std::string hash(const Size &size, const TextureOptions &options, const bool &onlyTexture);
 };
 
 }

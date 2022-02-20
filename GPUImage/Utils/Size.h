@@ -15,8 +15,8 @@ class Size {
 public:
     Size(float width, float height);
     ~Size();
-    float width();
-    float height();
+    float width() const;
+    float height() const;
 private:
     float mWidth;
     float mHeight;

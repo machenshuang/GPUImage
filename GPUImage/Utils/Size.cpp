@@ -17,11 +17,11 @@ Size::~Size() {
     printf("Size 释放");
 }
 
-float Size::width() {
+float Size::width() const {
     return mWidth;
 }
 
-float Size::height() {
+float Size::height() const {
     return mHeight;
 }
 

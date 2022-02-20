@@ -74,12 +74,20 @@ void ImageFramebuffer::unlock() {
     }
 }
 
-GLuint ImageFramebuffer::texture() {
+GLuint ImageFramebuffer::texture() const {
     return mTexture;
 }
 
-Size ImageFramebuffer::size() {
+Size ImageFramebuffer::size() const {
     return mSize;
+}
+
+TextureOptions ImageFramebuffer::options() const {
+    return mOptions;
+}
+
+bool ImageFramebuffer::onlyTexture() const {
+    return mOnlyTexture;
 }
 
 void ImageFramebuffer::clearAllLock() {
