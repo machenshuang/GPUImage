@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <OpenGLES/ES3/gl.h>
+#include <OpenGLES/ES3/glext.h>
 #include "Size.h"
 
 namespace gpu {
@@ -27,6 +28,7 @@ struct TextureOptions {
 class ImageFramebuffer {
 public:
     ImageFramebuffer(const Size &size, const TextureOptions &options, const bool &onlyTexture);
+    ImageFramebuffer(const Size &size, const GLuint &overriddenTexture);
     ~ImageFramebuffer();
     void activateFramebuffer();
     void lock();

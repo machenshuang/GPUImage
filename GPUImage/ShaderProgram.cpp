@@ -10,33 +10,33 @@ using namespace std;
 
 namespace gpu {
 ShaderProgram::ShaderProgram(const string &vertexShader, const string &fragmentShader) {
-    initialized = false;
-    attributes = vector<string>();
-    uniforms = vector<string>();
-    program = glCreateProgram();
+    mInitialized = false;
+    mAttributes = vector<string>();
+    mUniforms = vector<string>();
+    mProgram = glCreateProgram();
         
-    if (compileShader(this->vertexShader, GL_VERTEX_SHADER, vertexShader)) {
+    if (compileShader(this->mVertexShader, GL_VERTEX_SHADER, vertexShader)) {
         printf("Failed to compile vertex shader");
     }
         
-    if (compileShader(this->fragmentShader, GL_FRAGMENT_SHADER, fragmentShader)) {
+    if (compileShader(this->mFragmentShader, GL_FRAGMENT_SHADER, fragmentShader)) {
         printf("Failed to compile fragment shader");
     }
-    glAttachShader(program, this->vertexShader);
-    glAttachShader(program, this->fragmentShader);
+    glAttachShader(mProgram, this->mVertexShader);
+    glAttachShader(mProgram, this->mFragmentShader);
 }
 
 ShaderProgram::~ShaderProgram() {
-    if (vertexShader) {
-        glDeleteShader(vertexShader);
+    if (mVertexShader) {
+        glDeleteShader(mVertexShader);
     }
         
-    if (fragmentShader) {
-        glDeleteShader(fragmentShader);
+    if (mFragmentShader) {
+        glDeleteShader(mFragmentShader);
     }
         
-    if (program) {
-        glDeleteProgram(program);
+    if (mProgram) {
+        glDeleteProgram(mProgram);
     }
 }
 
@@ -69,43 +69,67 @@ bool ShaderProgram::compileShader(GLuint &shader, GLenum type, const string &sha
 
 bool ShaderProgram::link() {
     GLint status;
-    glLinkProgram(program);
-    glGetProgramiv(program, GL_LINK_STATUS, &status);
+    glLinkProgram(mProgram);
+    glGetProgramiv(mProgram, GL_LINK_STATUS, &status);
     if (status == GL_FALSE) {
         return false;
     }
         
-    if (vertexShader) {
-        glDeleteShader(vertexShader);
-        vertexShader = 0;
+    if (mVertexShader) {
+        glDeleteShader(mVertexShader);
+        mVertexShader = 0;
     }
         
-    if (fragmentShader) {
-        glDeleteShader(fragmentShader);
-        fragmentShader = 0;
+    if (mFragmentShader) {
+        glDeleteShader(mFragmentShader);
+        mFragmentShader = 0;
     }
         
-    initialized = true;
+    mInitialized = true;
     return true;
 }
 
 void ShaderProgram::user() {
-    glUseProgram(program);
+    glUseProgram(mProgram);
 }
 
 void ShaderProgram::validate() {
     GLint logLength;
-    glValidateProgram(program);
-    glGetProgramiv(program, GL_INFO_LOG_LENGTH, &logLength);
+    glValidateProgram(mProgram);
+    glGetProgramiv(mProgram, GL_INFO_LOG_LENGTH, &logLength);
     if (logLength > 0) {
         GLchar *log = (GLchar *)malloc(logLength);
-        glGetProgramInfoLog(program, logLength, &logLength, log);
+        glGetProgramInfoLog(mProgram, logLength, &logLength, log);
         printf("log: %s", log);
         free(log);
     }
 }
+
+bool ShaderProgram::initialized() {
+    return mInitialized;
+}
+
+void ShaderProgram::addAttribute(const string &attributeName) {
+    long count = std::count(mAttributes.begin(), mAttributes.end(), attributeName);
+    if (count <= 0) {
+        mAttributes.push_back(attributeName);
+        glBindAttribLocation(mProgram, (GLuint)mAttributes.size(), attributeName.c_str());
+    }
+}
+
+
+GLuint ShaderProgram::attributeIndex(const string &attributeName) {
+    std::vector<std::string>::iterator ite = std::find(mAttributes.begin(), mAttributes.end(), attributeName);
+    long index = std::distance(std::begin(mAttributes), ite);
+    return (GLuint)index;
+}
+
+GLuint ShaderProgram::uniformIndex(const string &uniformName) {
+    std::vector<std::string>::iterator ite = std::find(mUniforms.begin(), mUniforms.end(), uniformName);
+    long index = std::distance(std::begin(mUniforms), ite);
+    return (GLuint)index;
 }
 
 
 
-
+}

@@ -21,6 +21,22 @@ ImageFramebuffer::ImageFramebuffer(const Size &size,
     }
 }
 
+ImageFramebuffer::ImageFramebuffer(const Size &size,
+                                   const GLuint &overriddenTexture): mSize(size) {
+    TextureOptions defaultOptions {
+        .minFilter = GL_LINEAR,
+        .magFilter = GL_LINEAR,
+        .wrapS = GL_CLAMP_TO_EDGE,
+        .wrapT = GL_CLAMP_TO_EDGE,
+        .internalFormal = GL_RGBA,
+        .format = GL_BGRA,
+        .type = GL_UNSIGNED_BYTE
+    };
+    mOptions = defaultOptions;
+    mReferenceCount = 0;
+    mTexture = overriddenTexture;
+}
+
 ImageFramebuffer::~ImageFramebuffer() {
     destroyFramebuffer();
 }
@@ -40,7 +56,7 @@ void ImageFramebuffer::generateFramebuffer() {
     glBindFramebuffer(GL_FRAMEBUFFER, mFramebuffer);
     generateTexture();
     glBindTexture(GL_TEXTURE_2D, mTexture);
-    glTexImage2D(GL_TEXTURE_2D, 0, mOptions.internalFormal, (int)mSize.width(), (int)mSize.height(), 0, mOptions.format, mOptions.type, 0);
+    glTexImage2D(GL_TEXTURE_2D, 0, mOptions.internalFormal, (int)mSize.mWidth, (int)mSize.mHeight, 0, mOptions.format, mOptions.type, 0);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, mTexture, 0);
     glBindTexture(GL_TEXTURE_2D, 0);
 }
@@ -59,7 +75,7 @@ void ImageFramebuffer::destroyFramebuffer() {
 
 void ImageFramebuffer::activateFramebuffer() {
     glBindFramebuffer(GL_FRAMEBUFFER, mFramebuffer);
-    glViewport(0, 0, (int)mSize.width(), (int)mSize.height());
+    glViewport(0, 0, (int)mSize.mWidth, (int)mSize.mHeight);
 }
 
 void ImageFramebuffer::lock() {

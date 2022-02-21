@@ -17,6 +17,17 @@
 		428FEED927B53C35006676E3 /* GPUImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 428FEED827B53C35006676E3 /* GPUImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428FEEE227B53EA0006676E3 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 428FEEE027B53EA0006676E3 /* ShaderProgram.cpp */; };
 		428FEEE327B53EA0006676E3 /* ShaderProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = 428FEEE127B53EA0006676E3 /* ShaderProgram.h */; };
+		42F8D60D27C1E5F4004CE1D6 /* ImageConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F8D60B27C1E5F4004CE1D6 /* ImageConsumer.h */; };
+		42F8D61227C1EA06004CE1D6 /* ImageSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42F8D61027C1EA06004CE1D6 /* ImageSource.cpp */; };
+		42F8D61327C1EA06004CE1D6 /* ImageSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F8D61127C1EA06004CE1D6 /* ImageSource.h */; };
+		42F8D61627C23557004CE1D6 /* TextureOutput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42F8D61427C23557004CE1D6 /* TextureOutput.cpp */; };
+		42F8D61727C23557004CE1D6 /* TextureOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F8D61527C23557004CE1D6 /* TextureOutput.h */; };
+		42F8D61A27C23EA4004CE1D6 /* TextureInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42F8D61827C23EA4004CE1D6 /* TextureInput.cpp */; };
+		42F8D61B27C23EA4004CE1D6 /* TextureInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F8D61927C23EA4004CE1D6 /* TextureInput.h */; };
+		42F8D61F27C25F93004CE1D6 /* BasicOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42F8D61D27C25F93004CE1D6 /* BasicOperation.cpp */; };
+		42F8D62027C25F93004CE1D6 /* BasicOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F8D61E27C25F93004CE1D6 /* BasicOperation.h */; };
+		42F8D62327C27111004CE1D6 /* ShaderProgramCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42F8D62127C27111004CE1D6 /* ShaderProgramCache.cpp */; };
+		42F8D62427C27111004CE1D6 /* ShaderProgramCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F8D62227C27111004CE1D6 /* ShaderProgramCache.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +42,17 @@
 		428FEED827B53C35006676E3 /* GPUImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImage.h; sourceTree = "<group>"; };
 		428FEEE027B53EA0006676E3 /* ShaderProgram.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
 		428FEEE127B53EA0006676E3 /* ShaderProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
+		42F8D60B27C1E5F4004CE1D6 /* ImageConsumer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageConsumer.h; sourceTree = "<group>"; };
+		42F8D61027C1EA06004CE1D6 /* ImageSource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ImageSource.cpp; sourceTree = "<group>"; };
+		42F8D61127C1EA06004CE1D6 /* ImageSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageSource.h; sourceTree = "<group>"; };
+		42F8D61427C23557004CE1D6 /* TextureOutput.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureOutput.cpp; sourceTree = "<group>"; };
+		42F8D61527C23557004CE1D6 /* TextureOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureOutput.h; sourceTree = "<group>"; };
+		42F8D61827C23EA4004CE1D6 /* TextureInput.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureInput.cpp; sourceTree = "<group>"; };
+		42F8D61927C23EA4004CE1D6 /* TextureInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureInput.h; sourceTree = "<group>"; };
+		42F8D61D27C25F93004CE1D6 /* BasicOperation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasicOperation.cpp; sourceTree = "<group>"; };
+		42F8D61E27C25F93004CE1D6 /* BasicOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicOperation.h; sourceTree = "<group>"; };
+		42F8D62127C27111004CE1D6 /* ShaderProgramCache.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgramCache.cpp; sourceTree = "<group>"; };
+		42F8D62227C27111004CE1D6 /* ShaderProgramCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderProgramCache.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +104,9 @@
 		428FEED727B53C35006676E3 /* GPUImage */ = {
 			isa = PBXGroup;
 			children = (
+				42F8D61C27C24AB9004CE1D6 /* Operations */,
+				42F8D60F27C1E8E2004CE1D6 /* Inputs */,
+				42F8D60927C1E5A9004CE1D6 /* Outputs */,
 				4285B5C327C0907D000B4F4C /* Utils */,
 				428FEED827B53C35006676E3 /* GPUImage.h */,
 				428FEEE027B53EA0006676E3 /* ShaderProgram.cpp */,
@@ -90,8 +115,40 @@
 				4285B5C027C08ED7000B4F4C /* ImageFramebuffer.h */,
 				4285B5CC27C0A21A000B4F4C /* ImageFramebufferCache.cpp */,
 				4285B5CD27C0A21A000B4F4C /* ImageFramebufferCache.h */,
+				42F8D62127C27111004CE1D6 /* ShaderProgramCache.cpp */,
+				42F8D62227C27111004CE1D6 /* ShaderProgramCache.h */,
 			);
 			path = GPUImage;
+			sourceTree = "<group>";
+		};
+		42F8D60927C1E5A9004CE1D6 /* Outputs */ = {
+			isa = PBXGroup;
+			children = (
+				42F8D60B27C1E5F4004CE1D6 /* ImageConsumer.h */,
+				42F8D61427C23557004CE1D6 /* TextureOutput.cpp */,
+				42F8D61527C23557004CE1D6 /* TextureOutput.h */,
+			);
+			path = Outputs;
+			sourceTree = "<group>";
+		};
+		42F8D60F27C1E8E2004CE1D6 /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				42F8D61027C1EA06004CE1D6 /* ImageSource.cpp */,
+				42F8D61127C1EA06004CE1D6 /* ImageSource.h */,
+				42F8D61827C23EA4004CE1D6 /* TextureInput.cpp */,
+				42F8D61927C23EA4004CE1D6 /* TextureInput.h */,
+			);
+			path = Inputs;
+			sourceTree = "<group>";
+		};
+		42F8D61C27C24AB9004CE1D6 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				42F8D61D27C25F93004CE1D6 /* BasicOperation.cpp */,
+				42F8D61E27C25F93004CE1D6 /* BasicOperation.h */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4285B5C227C08ED7000B4F4C /* ImageFramebuffer.h in Headers */,
+				42F8D61727C23557004CE1D6 /* TextureOutput.h in Headers */,
+				42F8D60D27C1E5F4004CE1D6 /* ImageConsumer.h in Headers */,
+				42F8D61B27C23EA4004CE1D6 /* TextureInput.h in Headers */,
+				42F8D61327C1EA06004CE1D6 /* ImageSource.h in Headers */,
+				42F8D62427C27111004CE1D6 /* ShaderProgramCache.h in Headers */,
+				42F8D62027C25F93004CE1D6 /* BasicOperation.h in Headers */,
 				4285B5C727C0908E000B4F4C /* Size.h in Headers */,
 				4285B5CF27C0A21A000B4F4C /* ImageFramebufferCache.h in Headers */,
 				428FEEE327B53EA0006676E3 /* ShaderProgram.h in Headers */,
@@ -179,8 +242,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4285B5C627C0908E000B4F4C /* Size.cpp in Sources */,
+				42F8D61227C1EA06004CE1D6 /* ImageSource.cpp in Sources */,
+				42F8D61627C23557004CE1D6 /* TextureOutput.cpp in Sources */,
 				428FEEE227B53EA0006676E3 /* ShaderProgram.cpp in Sources */,
 				4285B5CE27C0A21A000B4F4C /* ImageFramebufferCache.cpp in Sources */,
+				42F8D61A27C23EA4004CE1D6 /* TextureInput.cpp in Sources */,
+				42F8D62327C27111004CE1D6 /* ShaderProgramCache.cpp in Sources */,
+				42F8D61F27C25F93004CE1D6 /* BasicOperation.cpp in Sources */,
 				4285B5C127C08ED7000B4F4C /* ImageFramebuffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

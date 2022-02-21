@@ -67,9 +67,9 @@ void ImageFramebufferCache::purgeAllUnassignedFramebuffer() {
 
 std::string ImageFramebufferCache::hash(const Size &size, const TextureOptions &options, const bool &onlyTexture) {
     if (onlyTexture) {
-        return std::to_string(size.width()) + "x" + std::to_string(size.height()) + "-" + std::to_string(options.minFilter) + std::to_string(options.magFilter) + std::to_string(options.wrapS) + std::to_string(options.wrapT) + std::to_string(options.internalFormal) + std::to_string(options.format) + std::to_string(options.type) + "-NOFB";
+        return std::to_string(size.mWidth) + "x" + std::to_string(size.mHeight) + "-" + std::to_string(options.minFilter) + std::to_string(options.magFilter) + std::to_string(options.wrapS) + std::to_string(options.wrapT) + std::to_string(options.internalFormal) + std::to_string(options.format) + std::to_string(options.type) + "-NOFB";
     } else {
-        return std::to_string(size.width()) + "x" + std::to_string(size.height()) + "-" + std::to_string(options.minFilter) + std::to_string(options.magFilter) + std::to_string(options.wrapS) + std::to_string(options.wrapT) + std::to_string(options.internalFormal) + std::to_string(options.format) + std::to_string(options.type);
+        return std::to_string(size.mWidth) + "x" + std::to_string(size.mHeight) + "-" + std::to_string(options.minFilter) + std::to_string(options.magFilter) + std::to_string(options.wrapS) + std::to_string(options.wrapT) + std::to_string(options.internalFormal) + std::to_string(options.format) + std::to_string(options.type);
     }
 }
 

@@ -11,13 +11,8 @@
 #include <stdio.h>
 
 namespace gpu {
-class Size {
+struct Size {
 public:
-    Size(float width, float height);
-    ~Size();
-    float width() const;
-    float height() const;
-private:
     float mWidth;
     float mHeight;
 };

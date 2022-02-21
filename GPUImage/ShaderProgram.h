@@ -16,6 +16,9 @@
 using namespace std;
 
 namespace gpu {
+
+
+
 class ShaderProgram {
 public:
     ShaderProgram(const string &vertexShader, const string &fragmentShader);
@@ -26,13 +29,14 @@ public:
     bool link();
     void user();
     void validate();
+    bool initialized();
 private:
-    vector<string> attributes;
-    vector<string> uniforms;
-    GLuint program;
-    GLuint vertexShader;
-    GLuint fragmentShader;
-    bool initialized;
+    vector<string> mAttributes;
+    vector<string> mUniforms;
+    GLuint mProgram;
+    GLuint mVertexShader;
+    GLuint mFragmentShader;
+    bool mInitialized;
     bool compileShader(GLuint &shader, GLenum type, const string &shaderStrinng);
 };
 }
